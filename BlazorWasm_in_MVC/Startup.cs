@@ -40,8 +40,7 @@ namespace BlazorWasm_in_MVC
                     {
                         builder.AllowAnyOrigin()
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials();
+                        .AllowAnyHeader();
                     });
             });
 
