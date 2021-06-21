@@ -28,7 +28,9 @@ namespace BlazorWasm_in_MVC
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.AllowAnyOrigin();
+                                      builder.WithOrigins("https://unpkg.com",
+                                          "http://unpkg.com")
+                                      .AllowAnyHeader().AllowAnyMethod();
                                   });
             });
 

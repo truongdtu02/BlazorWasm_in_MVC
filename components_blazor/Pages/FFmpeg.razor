@@ -37,8 +37,8 @@
     {
         if (FFmpegFactory.Runtime == null)
         {
-            //FFmpegFactory.Logger += WriteLogs;
-            //FFmpegFactory.Progress += ProgressChange;
+            FFmpegFactory.Logger += WriteLogs;
+            FFmpegFactory.Progress += ProgressChange;
             //FFmpegFactory.Progress += ProgressShow;
         }
 
@@ -95,9 +95,9 @@
         udStep("1");
 
         ////download all dependencies from cdn
-        //await ff.Load();
+        await ff.Load();
 
-        //udStep("2");
+        udStep("2");
 
         //if (!ff.IsLoaded) return;
 
