@@ -26,6 +26,8 @@ namespace BlazorWasm_in_MVC.Controllers
             {
                 return Redirect("/Home/DownFileFFmpeg/" + id);
             }
+            Response.Headers.Add("Cross-Origin-Embedder-Policy", "require-corp");
+            Response.Headers.Add("Cross-Origin-Opener-Policy", "same-origin");
             return View();
         }
 
@@ -33,6 +35,7 @@ namespace BlazorWasm_in_MVC.Controllers
         {
             string path = "wwwroot/FFmpegSrc/" + id;
             byte[] fileContent = System.IO.File.ReadAllBytes(path);
+            Response.Headers.Add("Cross-Origin-Resource-Policy", "cross-origin");
             return new FileContentResult(fileContent, "text/plan");
         }
 

@@ -60,12 +60,12 @@ namespace BlazorWasm_in_MVC
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.Use(async (context, next) =>
-            {
-                context.Response.Headers.Add("Cross-Origin-Embedder-Policy", "require-corp");
-                context.Response.Headers.Add("Cross-Origin-Opener-Policy", "same-origin");
-                await next.Invoke();
-            });
+            //app.Use(async (context, next) =>
+            //{
+            //    context.Response.Headers.Add("Cross-Origin-Embedder-Policy", "require-corp");
+            //    context.Response.Headers.Add("Cross-Origin-Opener-Policy", "same-origin");
+            //    await next.Invoke();
+            //});
 
             app.UseBlazorFrameworkFiles(); // add this for use blazor wasm component
 
