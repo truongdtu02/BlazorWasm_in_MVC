@@ -1,4 +1,5 @@
 ﻿using BlazorWasm_in_MVC.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -17,7 +18,7 @@ namespace BlazorWasm_in_MVC.Controllers
         {
             _logger = logger;
         }
-
+        [EnableCors]
         public IActionResult Index()
         {
             return View();
