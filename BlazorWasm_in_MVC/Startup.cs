@@ -38,7 +38,7 @@ namespace BlazorWasm_in_MVC
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:5000");
+                        builder.WithOrigins("http://localhost:5000", "https://iothtnhust20201.xyz");
                     });
             });
 
