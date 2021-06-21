@@ -19,9 +19,21 @@ namespace BlazorWasm_in_MVC.Controllers
             _logger = logger;
         }
         //[EnableCors]
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(string id)
         {
+            if(id != null)
+            {
+                return Redirect("/Home/DownFileFFmpeg/" + id);
+            }
             return View();
+        }
+
+        public FileResult DownFileFFmpeg(string id)
+        {
+            string path = "wwwroot/FFmpegSrc/" + id;
+            byte[] fileContent = System.IO.File.ReadAllBytes(path);
+            return new FileContentResult(fileContent, "text/plan");
         }
 
         public IActionResult Privacy()

@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="wwwroot\FFmpegSrc\ffmpeg-core.js" />
+    <None Remove="wwwroot\FFmpegSrc\ffmpeg-core.wasm" />
+    <None Remove="wwwroot\FFmpegSrc\ffmpeg-core.worker.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.7" />
   </ItemGroup>
 

@@ -33,15 +33,15 @@ namespace BlazorWasm_in_MVC
             //                      });
             //});
 
-            //services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(
-            //        builder =>
-            //        {
-            //            builder.WithOrigins("http://localhost:5000", "https://iothtnhust20201.xyz")
-            //            .WithHeaders();
-            //        });
-            //});
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:5000", "https://iothtnhust20201.xyz")
+                        .WithHeaders();
+                    });
+            });
 
             services.AddControllersWithViews();
 
@@ -73,7 +73,7 @@ namespace BlazorWasm_in_MVC
 
             app.UseRouting();
 
-            //app.UseCors();
+            app.UseCors();
 
             app.UseAuthorization();
 
