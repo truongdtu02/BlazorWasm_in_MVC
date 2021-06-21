@@ -2,6 +2,30 @@
     ViewData["Title"] = "Home Page";
 }
 
+<video id="player" controls></video>
+<input type="file" id="uploader">
+<script src="~/lib/ffmpeg/ffmpeg/dist/ffmpeg.min.js"></script>
+<script>
+    const { createFFmpeg, fetchFile } = FFmpeg;
+    const ffmpeg = createFFmpeg({
+        corePath: "lib/ffmpeg/ffmpeg/dist/ffmpeg-core.js",
+        log: true
+    });
+    const transcode = async ({ target: { files } }) => {
+        const { name } = files[0];
+        await ffmpeg.load();
+        ffmpeg.FS('writeFile', name, await fetchFile(files[0]));
+        await ffmpeg.run('-i', name, 'output.mp4');
+        const data = ffmpeg.FS('readFile', 'output.mp4');
+        const video = document.getElementById('player');
+        video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
+    }
+    document
+        .getElementById('uploader').addEventListener('change', transcode);
+</script>
+
+<br />
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>

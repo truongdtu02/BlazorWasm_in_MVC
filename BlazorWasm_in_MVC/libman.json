@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "unpkg",
+      "library": "@ffmpeg/ffmpeg@0.10.1",
+      "destination": "wwwroot/lib/ffmpeg/ffmpeg/"
+    }
+  ]
+}

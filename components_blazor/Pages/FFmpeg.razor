@@ -90,7 +90,7 @@
     async void Process()
     {
         //create an instance
-        ff = FFmpegFactory.CreateFFmpeg(new FFmpegConfig() { Log = true });
+        ff = FFmpegFactory.CreateFFmpeg(new FFmpegConfig() {CorePath= "~/lib/ffmpeg/ffmpeg", Log = true });
 
         udStep("1");
 
