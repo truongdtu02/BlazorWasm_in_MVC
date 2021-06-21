@@ -38,7 +38,10 @@ namespace BlazorWasm_in_MVC
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.AllowAnyOrigin();
+                        builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
                     });
             });
 
