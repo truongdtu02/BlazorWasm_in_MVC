@@ -17,7 +17,7 @@ namespace BlazorWasm_in_MVC
         {
             Configuration = configuration;
         }
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        //readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -33,14 +33,15 @@ namespace BlazorWasm_in_MVC
             //                      });
             //});
 
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:5000", "https://iothtnhust20201.xyz");
-                    });
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddDefaultPolicy(
+            //        builder =>
+            //        {
+            //            builder.WithOrigins("http://localhost:5000", "https://iothtnhust20201.xyz")
+            //            .WithHeaders();
+            //        });
+            //});
 
             services.AddControllersWithViews();
 
@@ -65,7 +66,7 @@ namespace BlazorWasm_in_MVC
 
             app.UseRouting();
 
-            app.UseCors();
+            //app.UseCors();
 
             app.UseAuthorization();
 

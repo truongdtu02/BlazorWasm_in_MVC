@@ -18,7 +18,7 @@ namespace BlazorWasm_in_MVC.Controllers
         {
             _logger = logger;
         }
-        [EnableCors]
+        //[EnableCors]
         public IActionResult Index()
         {
             return View();
