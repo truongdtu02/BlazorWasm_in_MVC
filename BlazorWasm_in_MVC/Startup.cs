@@ -23,29 +23,7 @@ namespace BlazorWasm_in_MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy(name: MyAllowSpecificOrigins,
-            //                      builder =>
-            //                      {
-            //                          builder.AllowAnyOrigin()
-            //                          .AllowAnyHeader().AllowAnyMethod();
-            //                      });
-            //});
-
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:5000", "https://iothtnhust20201.xyz")
-                        .WithHeaders();
-                    });
-            });
-
-            services.AddControllersWithViews();
-
-            
+            services.AddControllersWithViews(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,8 +50,6 @@ namespace BlazorWasm_in_MVC
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseCors();
 
             app.UseAuthorization();
 
