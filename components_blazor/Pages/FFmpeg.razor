@@ -5,6 +5,10 @@
 <InputFile OnChange="fileLoad" />
 <br />
 <h3>@step</h3>
+
+<br />
+<h3>InitFFmpeg : @(first ? "No" : "Yes")</h3>
+
 <br />
 <audio controls src="@url" />
 <br />
@@ -91,9 +95,9 @@
         udStep("1");
 
         ////download all dependencies from cdn
-        //await ff.Load();
+        await ff.Load();
 
-        //udStep("2");
+        udStep("2");
 
         //if (!ff.IsLoaded) return;
 
